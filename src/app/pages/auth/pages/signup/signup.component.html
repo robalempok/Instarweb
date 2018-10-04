@@ -1,0 +1,77 @@
+<div class="container registration-form">
+  <div class="row">
+    <div class="col-md-10 col-lg-6 mx-auto my-5">
+      <h2 class="text-center">Create Your Account</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field class="w-100">
+                <input matInput placeholder="First Name" formControlName="firstName" autofocus>
+                <mat-error *ngIf="f.email?.hasError('required')">
+                  First Name is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-form-field class="w-100">
+                <input matInput placeholder="Last Name" formControlName="lastName">
+                <mat-error *ngIf="f.lastName?.hasError('required')">
+                  Last Name is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <mat-form-field>
+            <input matInput placeholder="E-mail" formControlName="email" autofocus>
+            <mat-error *ngIf="f.email?.hasError('email') && !f.email?.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="f.email?.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput appPasswordToggle type="password" placeholder="Choose Password" formControlName="password">
+            <mat-error *ngIf="f.password?.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput appPasswordToggle type="password" placeholder="Confirm Password" formControlName="passwordConfirm">
+            <mat-error *ngIf="f.passwordConfirm?.hasError('required')">
+              This field is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="f.passwordConfirm?.hasError('notEquivalent')">
+              Passwords do not match
+            </mat-error>
+          </mat-form-field>
+          <div class="form-element">
+            <ngx-recaptcha2 [size]="recaptchaConfig.size" [hl]="recaptchaConfig.lang" [theme]="recaptchaConfig.theme"
+              [type]="recaptchaConfig.type" (expire)="handleCaptchaExpire()" (load)="handleCaptchaLoad()" (success)="handleCaptchaSuccess($event)"
+              formControlName="recaptcha">
+            </ngx-recaptcha2>
+          </div>
+          <div class="form-element">
+            <input type="checkbox" id="terms" formControlName="acceptsTerms">
+            <label for="terms">I certify that I am 18 years of age or older, and I agree to the
+              <a target="_blank" href="https://insights.network/terms/">User Agreement</a> and <a target="_blank " href="https://insights.network/privacy/">Privacy
+                Policy</a>.
+            </label>
+          </div>
+          <div class="row">
+            <div class="col-md-9 col-lg-7 mx-auto">
+              <div class="form-element text-center">
+                <button [disabled]="!registerForm.valid" appButtonConfirm>Create Account</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <br>
+      <div class="text-center">
+        <a routerLink="/login" class="log-link">Already have an account?</a>
+      </div>
+    </div>
+  </div>
+</div>

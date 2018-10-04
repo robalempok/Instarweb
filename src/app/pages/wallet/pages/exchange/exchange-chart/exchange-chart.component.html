@@ -1,0 +1,26 @@
+<div class="row p-4">
+  <div class="col-6 currency">
+    <span>{{ comparedCurrencies[0] }}</span>
+    <img src="assets/images/wallet/exchange/double-arrow.svg">
+    <span>{{ comparedCurrencies[1] }}</span>
+  </div>
+  <div class="col-6 text-right amount">
+    <span class="font-weight-bold">0.000111</span>
+    <span>$10.00</span>
+  </div>
+  <div class="col-12 text-right percentage negative" [ngClass]="percentage < 0 ? 'negative' : 'positive'">
+    <span>
+      <ng-container *ngIf="percentage >= 0">+</ng-container>{{ percentage }}%
+    </span>
+  </div>
+  <div class="col-12 row division">
+    <div class="col-auto pl-0">PAST DAY</div>
+    <div class="col division-line"></div>
+  </div>
+</div>
+<div id="chart">
+  <ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="values" [gradient]="gradient" [xAxis]="showXAxis"
+    [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [autoScale]="autoscale">
+  </ngx-charts-area-chart>
+</div>

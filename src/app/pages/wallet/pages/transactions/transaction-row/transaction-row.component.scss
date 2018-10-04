@@ -1,0 +1,45 @@
+:host{
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.row {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #303864;
+    >div {
+        display: flex;
+        align-items: center;
+    }
+}
+.transaction-logo {
+    display: flex;
+    >div{
+        margin-left: 1rem;
+        display: inline-block;
+    }
+    h4{
+        color: #303864;
+        font-size: 1rem;
+    }
+    p{
+        margin: 0;
+        font-size: 0.8rem;
+        color: #8c9fbf;
+    }
+}
+
+.circled {
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    font-weight: normal;
+    display: inline-block;
+    &.receive{
+        background-color: #f39d71;
+    }
+    &.transfer{
+        background-color: #78cb85;
+    }
+}

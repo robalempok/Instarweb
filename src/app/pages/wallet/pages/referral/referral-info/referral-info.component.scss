@@ -1,0 +1,115 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+h4 {
+    font-size: 0.9rem;
+    line-height: 1.67;
+    color: #8c9fbf;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #303864;
+    word-wrap: break-word;
+    @include media-breakpoint-down(md) {
+        font-size: 1rem;
+        line-height: 1.67;
+        color: #8c9fbf;
+        font-weight: normal;
+    }
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: 200;
+    color: #63cab6;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+    color: #63cab6;
+}
+
+h1, h2 {
+    @include media-breakpoint-down(md) {
+        font-size: 2rem;
+        letter-spacing: 0.7px;
+    }
+}
+
+.referral-info{
+    background-color: #f4f6f8;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    justify-content: center;
+    @include media-breakpoint-down(md) {
+        flex-direction: column-reverse;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        align-items: center;
+    }
+    .border-block{
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        @include media-breakpoint-down(md) {
+        border-left: 1px solid white;
+        border-right: 1px solid #e7e7ed;
+        }
+    }
+    h4{
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        @include media-breakpoint-down(md) {
+            font-size: 1rem;
+            line-height: 1.67;
+            color: #8c9fbf;
+            font-weight: normal;
+        }
+    }
+    h3{
+        @include media-breakpoint-down(md) {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #303864;
+        }
+    }
+}
+
+.instar-green{
+    color: #63cab6;
+}
+
+.referral-link{
+    input {
+        flex-grow:2;
+        border:none;
+        padding: 0.25rem 0;
+        max-width: 17rem;
+        width: 100%;
+    }
+      
+    button {
+        border:0;
+        background:#ffffff;
+        padding: 0.25rem 1rem;
+    }
+}
+
+.v-center{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+/deep/ .qrcode {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}

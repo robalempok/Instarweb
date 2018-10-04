@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-12 col-lg-7 row">
+    <div class="col-4 col-md-auto">
+      <div class="profile" [style.backgroundImage]="'url('+ (profilePictureLink) +')'">
+        <div class="upload-btn-wrapper">
+          <label for="file-upload">
+            <i class="fa fa-camera"></i>
+          </label>
+          <input type="file" accept="image/*" id="file-upload" (change)="fileSelected($event)" >
+        </div>
+      </div>
+    </div>
+    <div class="col-8 col-md-3 user-info">
+      <h3>{{firstName}} {{lastName}}</h3>
+      <p>since {{joined | date}}</p>
+      <div class="balance">
+        <img width="40px" height="40px" src="assets/images/logo-token.svg">
+        <span>{{balance}}</span>
+      </div>
+    </div>
+    <div class="col-4 col-md-2 stat">
+      <div class="b-right">
+          <h2>{{rating}}</h2>
+          <p>Rating</p>
+      </div>
+    </div>
+    <div class="col-4 col-md-2 stat">
+      <div class="b-right">
+          <h2>{{completedActivitiesCount}}</h2>
+          <p>Activity</p>  
+      </div>
+    </div>
+    <div class="col-4 col-md-2 stat">
+      <div>
+          <h2>{{level}}</h2>
+          <p>Level</p>
+      </div>
+    </div>
+  </div>
+</div>

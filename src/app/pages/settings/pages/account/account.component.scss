@@ -1,0 +1,41 @@
+h1{
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    padding: 2.5rem 0.5rem;
+    width: 100%;
+    input::-webkit-input-placeholder {
+        opacity: .5;
+        font-family: inherit;
+        font-size: inherit;
+    }
+    .keep-signed-in {
+        display: inline-block;
+        font-size: 0.871rem;
+        opacity: .8;
+        margin-left: 0.335rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"]
+    {
+        font-size: 1.072rem;
+    }
+    .form-element {
+        margin-top: .6rem;
+        margin-bottom: 1rem;
+        a {
+            font-weight: bold;
+            color: #000000;
+            text-decoration: none;
+        }
+    }
+}
+.form-inline {
+    display: flex;
+    justify-content: space-between;
+}

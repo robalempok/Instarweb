@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Transfer</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="transferForm" (ngSubmit)="onSubmit()" novalidate #transferFormRef="ngForm">
+        <div class="form-group">
+            <div class="form-element">
+                <input type="number" min="0" formControlName="amount" class="form-control amount" placeholder="amount" autofocus />
+            </div>
+            <div class="balance">Balance: <span class="font-weight-bold">{{ balance }}</span> {{ currency }}</div>
+            <div class="form-element purpled">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">To : </div>
+                    <input type="text" formControlName="address" class="form-control" placeholder="To" />
+                    <div class="input-group-text"><img src="assets/images/wallet/group.svg"></div>
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="form-element purpled col-8">
+                    <input type="text" formControlName="memo" class="form-control" placeholder="Instar Withdrawal MEMO" [readonly]="memoDisabled"  />
+                </div>
+                <div class="form-check form-check-inline col-4 m-0 form-element">
+                  <input [(checked)]="memoDisabled" class="form-check-input ml-auto" type="checkbox" id="memo">
+                  <label class="form-check-label ml-auto" for="memo">No Memo</label>
+                </div>
+            </div>
+          </div>
+    </form>
+    <div class="row transaction-information">
+      <div class="col-6">Network Fee <i class="fa fa-info-circle"></i></div>
+      <div class="col-6 text-right"><span class="font-weight-bold">{{ commission }}</span> {{ currency }}</div>
+    </div>
+    <div class="row transaction-information">
+        <div class="col-6">Total</div>
+        <div class="col-6 text-right"><span class="font-weight-bold">{{ commission + transferForm.value.amount }}</span> {{ currency }}</div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <button (click)="transferFormRef.ngSubmit.emit()" [disabled]="!transferFormRef.form.valid" appButtonConfirm>Continue</button>
+    </div>
+  </div>
+  

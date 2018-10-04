@@ -1,0 +1,42 @@
+<div class="row referral-info">
+  <div class="d-none d-lg-block col-2">
+    <qrcode class="qrcode" [qrdata]="referralLink" [size]="200" [level]="'M'"></qrcode>
+  </div>
+
+  <div class="col-12 col-lg-6 row">
+    <div class="col-12 col-lg-6 d-flex">
+      <div class="col-8 col-lg-12 p-0">
+        <h4>My Referral ID</h4>
+        <h3>{{ referralId }}</h3>
+      </div>
+      <div class="d-lg-none col-4 ml-auto text-right p-0">
+          <img src="assets/images/wallet/group.svg">
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <h4>Your Commission Rate</h4>
+      <h3 class="instar-green">{{ commissionRate }}%</h3>
+    </div>
+    <div class="col-12 col-lg-6 referral-link">
+      <h4>Referral Link</h4>
+      <div class="d-flex">
+        <input type="text" readonly [value]="referralLink" #referralLinkInput>
+        <button [ngxClipboard]="referralLinkInput" ngbTooltip="Copied!" triggers="click:blur"><i class="fa fa-copy"></i></button>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <h4>Share</h4>
+      <h3>{{ share }} INSTAR</h3>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4 row mb-4 mb-md-0">
+    <div class="col-6 border-block text-center v-center">
+      <h1>3</h1>
+      <h3>Referral Friends</h3>
+    </div>
+    <div class="col-6 text-center v-center">
+      <h2>{{ referralReward }} <span class="d-none d-md-inline">INSTAR</span></h2>
+      <h3>Estimated Commission</h3>
+    </div>
+  </div>
+</div>

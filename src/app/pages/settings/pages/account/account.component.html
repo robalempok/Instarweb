@@ -1,0 +1,57 @@
+<h1>Account</h1>
+
+<div id="update-name">
+  <h3>Update Names</h3>
+  <form [formGroup]="accountForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field class="w-100">
+            <input matInput placeholder="First Name" formControlName="firstName">
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field class="w-100">
+            <input matInput placeholder="Last Name" formControlName="lastName">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="form-group">
+          <button [disabled]="!accountForm.valid" appButtonConfirm>Update Profile</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="update-email">
+  <h3>Update Email</h3>
+  <form [formGroup]="updateEmailForm" (ngSubmit)="updateEmailFormSubmit()" novalidate>
+    <div class="form-group">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="form-group">
+          <button [disabled]="!accountForm.valid" appButtonConfirm>Update Email</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<h1 class="mt-5">Read only fields</h1>
+<div class="form-group">
+  <mat-form-field>
+    <input matInput type="email" placeholder="E-mail" [value]="email$ | async" readonly>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="EOS Account Name" [value]="eosAccountName$ | async" readonly>
+  </mat-form-field>
+</div>

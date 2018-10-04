@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <div>
+      <img src="assets/images/wallet/referral.png">
+  </div>
+  <h5 class="modal-title" id="exampleModalLabel">{{ activity.title | uppercase }}</h5>
+  <hr>
+</div>
+<div class="modal-body">
+  <div>
+      <p>{{ activity.description }}</p>
+  </div>
+  <div>
+      <h3>Your unique referral link</h3>
+      <a target="_blank" [href]="activity.uniqueShareUrl">{{ activity.uniqueShareUrl }}</a>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Cross click')">DONE</button>
+</div>

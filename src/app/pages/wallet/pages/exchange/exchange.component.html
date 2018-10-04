@@ -1,0 +1,65 @@
+<app-carousel class="d-md-none" [infinite]="false" [fade]="false" [arrowsVisible]="false" [height]="'22rem'" [autoPlay]="false">
+  <app-carousel-item>
+    <div class="col-12 col-md-6 col-xl-3">
+      <app-exchange-chart [comparedCurrencies]="currencies" [percentage]="percentage" [values]="multi"></app-exchange-chart>
+    </div>
+  </app-carousel-item>
+  <app-carousel-item>
+    <div class="col-12 col-md-6 col-xl-3">
+      <app-exchange-chart [comparedCurrencies]="currencies" [percentage]="percentage" [values]="multi"></app-exchange-chart>
+    </div>
+  </app-carousel-item>
+  <app-carousel-item>
+    <div class="col-12 col-md-6 col-xl-3">
+      <app-exchange-chart [comparedCurrencies]="currencies" [percentage]="percentage" [values]="multi"></app-exchange-chart>
+    </div>
+  </app-carousel-item>
+  <app-carousel-item>
+    <div class="col-12 col-md-6 col-xl-3">
+      <app-exchange-chart [comparedCurrencies]="currencies" [percentage]="percentage" [values]="multi"></app-exchange-chart>
+    </div>
+  </app-carousel-item>
+</app-carousel>
+
+<div class="d-none d-md-flex row">
+  <div class="col-12 col-md-6 col-xl-3">
+    <app-exchange-chart [comparedCurrencies]="currencies" [percentage]="percentage" [values]="multi"></app-exchange-chart>
+  </div>
+  <div class="col-12 col-md-6 col-xl-3">
+    <app-exchange-chart [comparedCurrencies]="currencies" [percentage]="percentage" [values]="multi"></app-exchange-chart>
+  </div>
+  <div class="col-12 col-md-6 col-xl-3">
+    <app-exchange-chart [comparedCurrencies]="currencies" [percentage]="percentage" [values]="multi"></app-exchange-chart>
+  </div>
+  <div class="col-12 col-md-6 col-xl-3">
+    <app-exchange-chart [comparedCurrencies]="currencies" [percentage]="percentage" [values]="multi"></app-exchange-chart>
+  </div>
+</div>
+<div class="mt-4">
+  <ul class="tabs">
+    <li [class.active]="selectedTab == 0" (click)="selectTab(0)">INSTAR Markets</li>
+    <li [class.active]="selectedTab == 1" (click)="selectTab(1)">BTC Markets</li>
+    <li [class.active]="selectedTab == 2" (click)="selectTab(2)">ETH Markets</li>
+    <li [class.active]="selectedTab == 3" (click)="selectTab(3)"><i class="fa fa-star"></i> Favorites</li>
+  </ul>
+</div>
+<div class="exchange">
+  <ng-container *ngIf="selectedTab == 0">
+    <div style="height: 5rem;" class="d-none d-lg-flex row">
+      <div class="col-auto activity-icon"></div>
+      <div class="col-2 exchange-heading">Name</div>
+      <div class="col-1 exchange-heading">24h Change</div>
+      <div class="col-1 exchange-heading">Price USD</div>
+      <div class="col-1 exchange-heading">24h Volume</div>
+      <div class="col-1 exchange-heading">Graph</div>
+    </div>
+    <app-market-row class="striped" *ngFor="let row of rowElements" [image]="row.image" [currencySymbol]="row.currencySymbol"
+      [currencyName]="row.currencyName" [dayChange]="row.dayChange" [dayVolume]="row.dayVolume" [price]="row.price"></app-market-row>
+  </ng-container>
+  <ng-container *ngIf="selectedTab == 1">
+  </ng-container>
+  <ng-container *ngIf="selectedTab == 2">
+  </ng-container>
+  <ng-container *ngIf="selectedTab == 3">
+  </ng-container>
+</div>

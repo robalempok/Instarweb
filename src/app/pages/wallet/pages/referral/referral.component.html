@@ -1,0 +1,101 @@
+<app-carousel *ngIf="referredFriends[0]" class="d-lg-none" [infinite]="false" [fade]="false" [arrowsVisible]="false" [height]="'10rem'" [autoPlay]="false">
+  <app-carousel-item *ngIf="referredFriends[0]">
+    <div class="col-12 col-lg-4">
+      <app-top-completed position="First" [email]="referredFriends[0].referredEmail" [commission]="referredFriends[0].reward"></app-top-completed>
+    </div>
+  </app-carousel-item>
+  <app-carousel-item *ngIf="referredFriends[1]">
+    <div class="col-12 col-lg-4">
+      <app-top-completed position="Second" [email]="referredFriends[1].referredEmail" [commission]="referredFriends[1].reward"></app-top-completed>
+    </div>
+  </app-carousel-item>
+  <app-carousel-item *ngIf="referredFriends[2]">
+    <div class="col-12 col-lg-4">
+      <app-top-completed position="Third" [email]="referredFriends[2].referredEmail" [commission]="referredFriends[2].reward"></app-top-completed>
+    </div>
+  </app-carousel-item>
+</app-carousel>
+
+<div class="d-none d-lg-flex row top-commissions">
+  <ng-container *ngIf="referredFriends[0]">
+    <div class="col-12 col-lg-4">
+      <app-top-completed position="First" [email]="referredFriends[0].referredEmail" [commission]="referredFriends[0].reward"></app-top-completed>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="referredFriends[1]">
+    <div class="col-12 col-lg-4">
+      <app-top-completed position="Second" [email]="referredFriends[1].referredEmail" [commission]="referredFriends[1].reward"></app-top-completed>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="referredFriends[2]">
+    <div class="col-12 col-lg-4">
+      <app-top-completed position="Third" [email]="referredFriends[2].referredEmail" [commission]="referredFriends[2].reward"></app-top-completed>
+    </div>
+  </ng-container>
+</div>
+<app-referral-info share="0" commissionRate="0.25" [referralId]="email$ | async" [referralReward]="referralReward"
+  [referralLink]="referralLink"></app-referral-info>
+<div class="row d-none d-lg-flex">
+  <div class="col-12 col-lg-5 referral-table pr-md-5">
+    <div class="row align-items-center">
+      <h1 class="pl-0 col-auto">Referral Friends</h1>
+      <!-- <div class="ml-auto col-auto"><button appButtonExport>Export</button></div> -->
+    </div>
+    <div class="row head">
+      <div class="col-5">Email</div>
+      <div class="col-3">Date</div>
+      <div class="col-3">Time</div>
+    </div>
+    <div *ngFor="let referral of referredFriends" class="row body">
+      <div class="col-5">{{ referral.referredEmail }}</div>
+      <div class="col-3">{{ referral.completionDate | date }}</div>
+      <div class="col-3">{{ referral.completionDate | date:'shortTime' }}</div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-7 referral-table pl-md-5 pr-md-5">
+    <div class="row align-items-center">
+      <h1 class="pl-0 col-auto">Latest Commission History</h1>
+      <!-- <div class="ml-auto col-auto"><button appButtonExport>Export</button></div> -->
+    </div>
+    <div class="row head">
+      <div class="col-4">Commission</div>
+      <div class="col-3">Email</div>
+      <div class="col-3">Date</div>
+      <div class="col-2">Time</div>
+    </div>
+    <div *ngFor="let referral of latestReferrals" class="row body">
+      <div class="col-4">{{ referral.reward }} INSTAR</div>
+      <div class="col-3">{{ referral.referredEmail }}</div>
+      <div class="col-3">{{ referral.completionDate | date }}</div>
+      <div class="col-2">{{ referral.completionDate | date:'shortTime' }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-lg-none">
+  <div>
+    <ul class="tabs">
+        <li [class.active]="selectedTab == 0" (click)="selectTab(0)">Referral Friends</li>
+        <li [class.active]="selectedTab == 1" (click)="selectTab(1)">Latest Commission History</li>
+    </ul>
+  </div>
+  <ng-container *ngIf="selectedTab == 0" >
+    <div class="referral-table">
+      <div *ngFor="let referral of referredFriends" class="row body">
+        <div class="col-8"><p>{{ referral.referredEmail }}</p></div>
+        <div class="ml-auto col-3"><p>{{ referral.completionDate | date }}</p></div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="selectedTab == 1" >
+    <div class="referral-table">
+      <div *ngFor="let referral of latestReferrals" class="row body">
+        <div class="col-7">
+          <p>{{ referral.referredEmail }}</p>
+          <p class="light-instar">{{ referral.reward }} INSTAR</p>
+        </div>
+        <div class="ml-auto col-3"><p>{{ referral.completionDate | date }}</p></div>
+      </div>
+    </div>
+  </ng-container>
+</div>

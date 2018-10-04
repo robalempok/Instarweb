@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Instar Wallet</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- inline spinner styles to be able to display spinner right away -->
+  <style>
+    body,
+    html {
+      height: 100%;
+    }
+
+    .app-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1080;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .app-loading .spinner {
+      height: 200px;
+      width: 200px;
+      animation: rotate 2s linear infinite;
+      transform-origin: center center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .app-loading .spinner .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ddd;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <app-root>
+    <div class="app-loading">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgd2lkdGg9IjcwcHgiIGhlaWdodD0iNzBweCIgdmlld0JveD0iMCAwIDcwIDcwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICAgIDwhLS0gR2VuZXJhdG9yOiBza2V0Y2h0b29sIDUxLjIgKDU3NTE5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4NCiAgICA8dGl0bGU+Q0ZCREEyNDktMTVBOC00NzEyLUE1ODMtQTdDQzI5MDBDNUU4PC90aXRsZT4NCiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+DQogICAgPGRlZnM+PC9kZWZzPg0KICAgIDxnIGlkPSJpbnN0YXItd2ViIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICAgICAgPGcgaWQ9IkRlc2t0b3AtSEQtQ29weSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTY4NS4wMDAwMDAsIC0xNDQuMDAwMDAwKSIgZmlsbC1ydWxlPSJub256ZXJvIj4NCiAgICAgICAgICAgIDxnIGlkPSJIRUFERVIiPg0KICAgICAgICAgICAgICAgIDxnIGlkPSJMb2dvX1Rva2VuX0FydGJvYXJkLTE3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2ODUuMDAwMDAwLCAxNDQuMDAwMDAwKSI+DQogICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIGZpbGw9IiMzMDM4NjQiIGN4PSIzNSIgY3k9IjM1IiByPSIzNSI+PC9jaXJjbGU+DQogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zMS40NDMxNDI3LDI0LjU0Nzc1MjcgTDM1LjM5NDM2NjIsMjAuNjU2MjAzNCBMMzkuMzkwMjcyNCwyNC41OTgwNDc0IEw0NS4wMzk0MzY5LDI0LjU5ODA0NzQgTDQ1LjAzOTQzNjksMzAuMTYxODk0MiBMNDkuMDM1MzQzMSwzNC4wOTc0NTE0IEw0NS4wMzk0MzY5LDM4LjAzMzAwODYgQzQ1LjA0Mjk1MTYsNDAuMjIyNDgyIDQ2Ljg0NDIxMTksNDEuOTk2NTM4NCA0OS4wNjcyNTkzLDQyIEw2MS44MzM3MzI3LDQyIEM2NS43MDQ0MDc0LDI5LjI4MTcwNjggNTkuNjgyODM2NSwxNS42NzAwMjY0IDQ3LjU4OTkxODYsOS44MDIwNDg4NSBDMzUuNDk3MDAwNywzLjkzNDA3MTM1IDIwLjg2OTU1MjgsNy41MjYwMDQ4NCAxMi45ODkyMDU0LDE4LjI5ODY0MTIgQzEyLjExODc0NzgsMTkuNTA5Njg1NSAxMi4wMDg1Njg5LDIxLjA5ODMzMTMgMTIuNzAzNzQwMiwyMi40MTQ3MDMyIEMxMy4zOTg5MTE0LDIzLjczMTA3NSAxNC43ODI4MTgyLDI0LjU1NDM1MjMgMTYuMjg5MzM4OCwyNC41NDc3NTI3IEwzMS40NDMxNDI3LDI0LjU0Nzc1MjcgWiIgaWQ9IlNoYXBlIiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+DQogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zOC40OTQ0OTQsNDMuNjA0ODQwNiBMMzQuNTIzODY3MSw0Ny40OTIwMjUgTDMwLjU0MDUxMzgsNDMuNjA0ODQwNiBMMjQuOTA5MDk1OSw0My42MDQ4NDA2IEwyNC45MDkwOTU5LDM4LjA0OTA0MTggTDIwLjkyNTc0MjYsMzQuMTM2ODU5NSBMMjQuOTA5MDk1OSwzMC4yMjQ2NzcyIEMyNC45MDkwOTU5LDI4LjAyOTUyMzYgMjMuMDk3MTk4OSwyNi4yNSAyMC44NjIxMTA4LDI2LjI1IEw4LjIyNDgyNzA4LDI2LjI1IEM0LjIzNzg0MzMsMzguOTU2MjM3NCAxMC4yNDk2OTY2LDUyLjYyMzU3MTggMjIuNDAyNjIzLDU4LjQ4MTc3MDkgQzM0LjU1NTU0OTQsNjQuMzM5OTcgNDkuMjQxNTg4Niw2MC42NDk4NTE4IDU3LjAzNjgxMjYsNDkuNzc5MzM5MiBDNTcuODg3MDQ1NCw0OC41NzIzMjAzIDU3Ljk4NDM5MDgsNDcuMDAxNDEyIDU3LjI4OTQ3MzUsNDUuNzAyMDM0NyBDNTYuNTk0NTU2Miw0NC40MDI2NTc1IDU1LjIyMjM3MTEsNDMuNTg5ODMyNiA1My43Mjc5NTY4LDQzLjU5MjM0MTcgTDM4LjQ5NDQ5NCw0My42MDQ4NDA2IFoiIGlkPSJTaGFwZSIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPg0KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDIuNDM1NjIyMywzMS45NDIwNjAxIEw0NS41LDM1IEw0Mi40MjI3NDY4LDM4LjA3NzI1MzIgTDQyLjQyMjc0NjgsMzguMDk2NTY2NSBMNDIuNDIyNzQ2OCw0Mi40MjI3NDY4IEwzOC4wNzcyNTMyLDQyLjQyMjc0NjggTDM4LjA1NzkzOTksNDIuNDM1NjIyMyBMMzUsNDUuNSBMMzEuOTIyNzQ2OCw0Mi40MjI3NDY4IEwzMS45MDM0MzM1LDQyLjQyMjc0NjggTDI3LjU3NzI1MzIsNDIuNDIyNzQ2OCBMMjcuNTc3MjUzMiwzOC4wNzcyNTMyIEwyNy41NjQzNzc3LDM4LjA1NzkzOTkgTDI0LjUsMzUgTDI3LjU3NzI1MzIsMzEuOTIyNzQ2OCBMMjcuNTc3MjUzMiwzMS45MDM0MzM1IEwyNy41NzcyNTMyLDI3LjU3NzI1MzIgTDMxLjkyMjc0NjgsMjcuNTc3MjUzMiBMMzEuOTQyMDYwMSwyNy41NjQzNzc3IEwzNSwyNC41IEwzOC4wNzcyNTMyLDI3LjU3NzI1MzIgTDM4LjA5MDEyODgsMjcuNTc3MjUzMiBMNDIuNDIyNzQ2OCwyNy41NzcyNTMyIEw0Mi40MjI3NDY4LDMxLjkyMjc0NjggTDQyLjQzNTYyMjMsMzEuOTQyMDYwMSBaIiBpZD0iQ29tYmluZWQtU2hhcGUiIGZpbGw9IiM2M0NBQjYiPjwvcGF0aD4NCiAgICAgICAgICAgICAgICA8L2c+DQogICAgICAgICAgICA8L2c+DQogICAgICAgIDwvZz4NCiAgICA8L2c+DQo8L3N2Zz4=">
+      <svg class="spinner" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+      </svg>
+    </div>
+  </app-root>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<ng-container *ngIf="currentKycStatus === KycStatus.PASSED">
+  <div class="header">
+    <img src="assets/images/wallet/success-icon.svg">
+    <h3>KYC Approved</h3>
+  </div>
+  <p class="mb-4">Congratulations! Your account has already been approved through our KYC process.
+    Nothing to do here anymore!</p>
+</ng-container>
+<ng-container *ngIf="currentKycStatus === KycStatus.UNDETERMINED">
+  <p class="mb-4">You have not yet completed the KYC process</p>
+  <p>Remember that you cannot complete an activity without it.</p>
+  <div class="row">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="form-group">
+        <button routerLink="/kyc" appButtonConfirm>Proceed to KYC</button>
+      </div>
+    </div>
+  </div>
+</ng-container>

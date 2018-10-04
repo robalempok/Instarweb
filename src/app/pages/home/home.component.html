@@ -1,0 +1,139 @@
+<app-header [isLoggedIn]="isLoggedIn" [navScrolled]="navScrolled" (signOut)="signOut()" [hideTitleMobile]="true">
+</app-header>
+<div #banner class="referral-section">
+  <div class="container">
+    <div class="text-center referral-program">
+      <img src="assets/images/logo-token.svg">
+      <h1>INSTAR REFERRAL PROGRAM</h1>
+      <hr>
+      <h2>Get paid in tokens for sharing!</h2>
+    </div>
+    <div class="row steps">
+      <div class="col-12 col-lg-1 arrow">
+      </div>
+      <div class="col-12 col-lg-3">
+        <div>
+          <div class="oval">
+            1
+          </div>
+          <h3>GET YOUR LINK</h3>
+        </div>
+        <div>
+          <p>Log in and get a custom referral link</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-1 arrow">
+        <img src="assets/images/arrow.svg">
+      </div>
+      <div class="col-12 col-lg-3">
+        <div>
+          <div class="oval">
+            2
+          </div>
+          <h3>INVITE FRIENDS</h3>
+        </div>
+        <div>
+          <p>Invite friends with your custom referral link</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-1 arrow">
+        <img src="assets/images/arrow.svg">
+      </div>
+      <div class="col-12 col-lg-3">
+        <div>
+          <div class="oval">
+            3
+          </div>
+          <h3>EARN TOKENS</h3>
+        </div>
+        <div>
+          <p>Earn <span class="font-weight-bold">25 INSTAR</span> as soon as they register and complete three
+            activities</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center terms">
+      <p>*Terms and conditions apply. <a target="_blank" href="https://insights.network/terms/">Read more</a></p>
+    </div>
+    <div class="text-center button-actions" [ngClass]="{'scrolled': buttonScrolled}" #buttonActions>
+      <ng-container *ngIf="!isLoggedIn">
+        <a routerLink="/signup" class="btn mr-1 mr-lg-3 first">REGISTER</a>
+        <a routerLink="/login" class="btn ml-1 ml-lg-3">LOG IN</a>
+      </ng-container>
+      <ng-container *ngIf="isLoggedIn">
+        <a routerLink="/app" class="btn mr-1 mr-lg-3 first">GO TO APP</a>
+        <a (click)="signOut()" class="btn ml-1 ml-lg-3">SIGN OUT</a>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<main>
+  <div class="container landing-stats">
+    <h1>Join Our Growing Network of Verified Contributors Getting Paid in Digital Tokens </h1>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <h2>100,000</h2>
+        <p>contributors are verified for participation</p>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h2>2 Million</h2>
+        <p>INSTAR have been paid</p>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h2>125,000</h2>
+        <p>transactions per month</p>
+      </div>
+    </div>
+  </div>
+  <div class="benefits container">
+    <div class="row benefits-inside container">
+      <div class="benefits-cell col-6 col-lg-4">
+        <img src="assets/images/icon-controlyourdata.svg">
+        <h3>Control Your Data</h3>
+        <p>Ensure that your data is protected and choose when to share it</p>
+      </div>
+      <div class="benefits-cell col-6 col-lg-4">
+        <img src="assets/images/icon-getpaid.svg">
+        <h3>Get Paid</h3>
+        <p>Get paid in digital tokens for participating in daily activities</p>
+      </div>
+      <div class="benefits-cell col-6 col-lg-4">
+        <img src="assets/images/icon-invitefriends.svg">
+        <h3>Invite Friends</h3>
+        <p>Invite friends and receive digital tokens for helping our network grow stronger</p>
+      </div>
+      <div class="benefits-cell col-6 col-lg-4">
+        <img src="assets/images/icon-dailyactivities.svg">
+        <h3>Daily Activities</h3>
+        <p>Participate in a growing number of daily activities to increase your token supply</p>
+      </div>
+      <div class="benefits-cell col-6 col-lg-4">
+        <img src="assets/images/icon-userfriendly.svg">
+        <h3>User Friendly</h3>
+        <p>Easy-to-use interface with best in class support and trusted by thousands of verified users</p>
+      </div>
+      <div class="benefits-cell col-6 col-lg-4">
+        <img src="assets/images/icon-withdrawtoken.svg">
+        <h3>Withdraw Tokens</h3>
+        <p>Withdraw or spend your digital tokens effortlessly </p>
+      </div>
+    </div>
+  </div>
+  <div class="apps container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6">
+        <h1>The Instar Wallet is now live!</h1>
+        <p>Earn digital tokens for participing in data exchange</p>
+        <img class="mockup d-lg-none" src="assets/images/mockup.png">
+        <div class="app-icons">
+          <img class="mr-lg-3" src="assets/images/appstore.svg">
+          <img class="ml-lg-3" src="assets/images/button-googleplay.png">
+        </div>
+      </div>
+      <div class="d-none d-lg-block col-lg-6">
+        <img class="mockup" src="assets/images/mockup.png">
+      </div>
+    </div>
+  </div>
+</main>
+<app-home-footer></app-home-footer>

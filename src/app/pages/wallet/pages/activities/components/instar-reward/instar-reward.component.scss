@@ -1,0 +1,22 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+:host{
+    font-family: 'Nunito Sans';
+    padding: 0.45rem 0.75rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 7rem;
+    float: right;
+    background-color: #e8f0ff;
+    font-size: 1.5rem;
+    color: #303864;
+    @include media-breakpoint-down(md) {
+        width: 5rem;
+        font-size: 1.25rem;
+    }
+    img{
+        width: 30%;
+    }
+}

@@ -1,0 +1,109 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+main {
+  min-height: calc(100% - 23rem);
+}
+
+
+.sidenav{
+    color: #8c9fbf;
+    width: 15rem;
+    @include media-breakpoint-down(md) {
+        background-color: #3A446A;
+        color: #ffffff;
+        width: 100%;
+        height: fit-content;
+        transform: translate3d(0,-100%,0);
+    }
+    hr{
+        background-color: #979797;
+    }
+    ul {
+        padding: 3rem 0;
+        padding-left: 0.75rem;
+        
+        li {
+            a{
+                
+                padding: 1rem 1rem;
+                font-size: 1.1rem;
+                display: block;
+                color: #B1B1B1;
+                text-decoration: none;
+                &:hover{
+                    color: #3A446A;
+                }
+                &.active{
+                    color: #63cab6;
+                }
+                img{
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.dropdown-item{
+    font-size: 0.93rem;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    white-space: inherit;
+    padding: 0.75rem 1.75rem;
+    &:hover,
+    &:focus{
+        background-color: #3A446A;
+        color: #ffffff;
+    }
+    img{
+        width: 13%;
+        margin-right: 0.75rem;
+    }
+}
+.notification-number{
+    color: #e76988;
+    letter-spacing: 0.3px;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.user-info{
+    padding: 1rem 1.75rem;
+    display: flex;
+    text-align: left;
+    img {
+        margin-right: 1rem;
+    }
+    h4{
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        color: #ffffff;
+        margin-bottom: 0;
+    }
+    span{
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        color: #9199a8;
+        word-break: break-all;
+    }
+}
+.referral-item{
+	>div {
+		margin-left: auto;
+		border-radius: 0.25rem;
+		background-color: #63cab6;
+		color: white;
+		padding: 0.25rem 0.5rem;
+		img{
+			margin-right: 0;
+			width: 1.25rem;
+			margin-left: 0.5rem;
+		}
+	}
+}

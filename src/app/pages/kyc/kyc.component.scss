@@ -1,0 +1,299 @@
+@import '../../../styles/variables';
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+:host {
+	display: block;
+    min-height: 100%;
+	background: url("/assets/images/bg-header.png") no-repeat;
+    background-size: auto 100vw;
+    font-family: "Nunito Sans";
+    
+	@include media-breakpoint-down(lg) {
+        background: url('/assets/images/bg-header-mobile.png');
+    }
+
+}
+
+#JUMIOIFRAME {
+    width: 50%;
+    height: 68vh;
+    position: relative;
+    top: 50%;
+	transform: translateX(50%);
+	@include media-breakpoint-down(lg) {
+		width: 100%;
+		transform: unset;
+	}
+}
+
+main{
+	height: 100%;
+	padding-top: 10rem;
+}
+
+/deep/ a.nav-btn-gray {
+    background: #93a5bf;
+    color: #fff !important;
+	padding: 0.536rem 0.804rem;
+	padding-left: 0.8rem !important;
+	padding-right: 0.8rem !important;
+}
+
+.top-bar{
+	background: $green;
+	color: $white;
+	padding-top: 0.1675rem;
+	padding-bottom: 0.1675rem;
+	padding-left: 0.335rem;
+	padding-right:0.335rem;
+	a{
+		color: $white;
+		&:hover{
+			color: $white;
+		}
+	}
+}
+
+/deep/ .navbar-brand {
+	font-family: "AcuminPro-ExtraLight";
+    font-size: 1.675rem;
+    text-decoration: none;
+    letter-spacing: 4px;
+    margin-left: 2.68rem;
+	font-weight: $font-weight-extra-light;
+	.btn-outline-danger {
+		padding: 1rem 1.5rem !important;
+	}
+}
+.navbar-dark {
+	.navbar-brand {
+		color: $black;
+	}
+}
+.nav-item {
+	margin-right: 0.67rem;
+	margin-left: 0.67rem;
+	@include media-breakpoint-down(sm) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.navbar.active {
+	background: #3a446a !important;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+//new
+
+/deep/ header{
+	.dropdown:hover>.dropdown-menu {
+		display: block;
+	}
+	.dropdown-menu:hover{
+		display: block;
+	}
+	.dropdown-menu{
+		position: absolute;
+		border: 0;
+		width: 128%;
+		margin-top: -9%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		background: transparent;
+		&.second{
+			width: 211%;
+			>div:before{
+				right: 28.5%;
+			}
+		}
+		&.third>div:before{
+			top: 7px;
+			right: 21.5%;
+		}
+		> div{
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			margin-top: 5%;
+			background-color: #fff;
+			border: 1px solid #bee7d9;
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px rgba(190, 231, 217, 0.6);
+			border-radius: 5%;
+			max-width: 16rem;
+			width: 100%;
+			&:before{
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background: white;
+				border-top: 1px solid rgb(190,231,217);
+				border-left: 1px solid rgb(190,231,217);
+				top: 10px;
+				right: 12.5%;
+				transform: rotate(45deg);
+			}
+		}
+	}
+	.dropdown-item{
+		font-family: "AcuminPro-Light";
+		font-size: 0.93rem;
+		color: #93a5bf;
+		text-decoration: none;
+		cursor: pointer;
+		letter-spacing: 1.5px;
+		display: flex;
+		align-items: center;
+		white-space: inherit;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+		&:hover,
+		&:focus{
+			background-color: #E9EDF2;
+			color: #16181b;
+		}
+		img{
+			width: 13%;
+			margin-right: 0.75rem;
+		}
+	}
+	.show-menu {
+		display: none;
+		background: linear-gradient(to left top, rgba(104,116,155, 0.5) 0%/*bottom-right color*/, rgba(104,116,155, 0.85) 50% /*middle color*/, rgb(104,116,155) 100% /*top-left color*/), linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
+		position: fixed;
+		top:0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		flex-direction: column;
+		z-index: 9999999;
+		color: #fff;
+		font-size: 1.34rem;
+		font-family: "AcuminPro-Light";
+		font-weight: 400;
+		text-align: left;
+		overflow-y: auto;
+		a{
+			color: #ffffff;
+		}
+	}
+	
+		
+	.show-menu::-webkit-scrollbar {
+		width: 8px;
+	}
+	
+	.show-menu::-webkit-scrollbar-track {
+		background: rgb(185, 181, 181); 
+	}
+	
+	.show-menu::-webkit-scrollbar-thumb {
+		background: rgb(104,116,155);
+		border-radius: 5px;
+	}
+	.show-menu::-webkit-scrollbar-thumb:hover {
+		background: rgb(104,116,155);
+	}
+	
+	.mini-link {
+		font-family: "AcuminPro-Semibold";
+	}
+	
+	.mini-icons {
+		margin-right: 15px;
+	}
+	
+	.bttm {
+		margin: 0.268rem 0;
+	}
+	
+	.mini-hr {
+		border: 0;
+		width: 100%;
+		height: 1px;
+		background: #fff;
+	}
+	
+	.mini-dark {
+		display: block;
+		padding: 0.335rem 0;
+		background: #3a446a;
+		color: #fff;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	
+	.mini-icon-item {
+		margin: 0.469rem 0;
+	}
+	
+	.mini-light {
+		display: block;
+		padding: 0.335rem 0;
+		background: #fff;
+		text-align: center;
+		margin-bottom: 1rem;
+		color: black !important;
+	}
+	
+	.mini-title {
+		margin-bottom: 0.536rem;
+	}
+	
+	.mini-brand {
+		letter-spacing: 1.5px;
+	}
+	
+	.mini-container {
+		width: 100%;
+		min-width: 340px;
+		max-width: 550px;
+		padding: 15px 20px;
+		margin: 0 auto;
+	}
+	
+	.mini-col {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.justified {
+		justify-content: space-between;
+		margin: 1.34rem 0;
+		.close-menu{
+			margin-right: 0;
+		}
+		img {
+			margin-right: 10px;
+		}
+	}
+	
+	.mini-row {
+		display: flex;
+		align-items: center
+	}
+	
+	.hide-menu {
+		display: none !important;
+	}
+	
+	@media only screen and (max-width: 1100px) {
+		.show-menu  {
+			display: block;
+		}
+	
+		.menu-burger  {
+			display: block;
+		}
+	
+		.nav-right {
+			display: none;
+		} 
+	}
+}

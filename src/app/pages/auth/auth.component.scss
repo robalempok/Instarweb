@@ -1,0 +1,161 @@
+@import '../../../styles/variables';
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+:host {
+    display: block;
+    min-height: 100%;
+	background: url("/assets/images/bg-header.png") no-repeat;
+    background-size: auto 100vw;
+    font-family: 'Nunito Sans';
+    
+	@include media-breakpoint-down(lg) {
+        background: url('/assets/images/bg-header-mobile.png');
+    }
+}
+
+/deep/ .registration-form {
+    padding-top: 8rem;
+    label {
+        display: none;
+    }
+    h2 {
+        color: #fff;
+        font-family: 'Nunito Sans';
+        letter-spacing: .5px;
+        margin-bottom: 1.5rem;
+        font-size: 2.25rem;
+        @include media-breakpoint-down(md){
+            font-size: 1.675rem;
+        }
+    }
+    .text-center {
+        margin-left: 3.375rem;
+        margin-right: 3.375rem;
+        @include media-breakpoint-down(md){
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+    }
+    .log-link {
+        display: inline-block;
+        color: #fff;
+        font-family: 'Nunito Sans';
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.03rem;
+        // margin-right: 0.335rem;
+        // margin-left: 0.335rem;
+        padding: 0;
+        margin-bottom: 0.75rem;
+        @include media-breakpoint-down(xs) {
+            text-align: center;
+            display: block;
+        }
+    }
+    .dot{
+        color: #fff;
+        opacity: 0;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        padding: 3.484rem 2.68rem;
+        width: 100%;
+		box-shadow: 0 0.335rem 0.67rem rgba(0, 0, 0, .15) !important;
+        border-radius: 0.5rem;
+        margin-bottom: 2.25rem;
+        @include media-breakpoint-down(md) {
+            padding: 2.484rem 1.68rem;
+        }
+        input::-webkit-input-placeholder {
+            opacity: .5;
+            font-family: inherit;
+            font-size: inherit;
+        }
+        .keep-signed-in {
+            display: inline-block;
+            font-size: 0.875rem;
+            margin-left: 0.335rem;
+            color: #303864;
+            padding-left: 2.187rem;
+        }
+        input[type="checkbox"] {
+            height: 1rem;
+            width: 1rem;
+            border-radius: 0;
+        }
+        .form-element {
+			margin-top: .6rem;
+            margin-bottom: 1rem;
+            a {
+                font-weight: bold;
+                color: #000000;
+                text-decoration: none;
+            }
+		}
+    }
+    .form-inline {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/deep/ a.nav-btn-gray {
+    background: #93a5bf;
+    color: #fff !important;
+	padding: 0.536rem 0.804rem;
+	padding-left: 0.8rem !important;
+	padding-right: 0.8rem !important;
+}
+
+.top-bar{
+	background: $green;
+	color: $white;
+	padding-top: 0.1675rem;
+	padding-bottom: 0.1675rem;
+	padding-left: 0.335rem;
+	padding-right:0.335rem;
+	a{
+		color: $white;
+		&:hover{
+			color: $white;
+		}
+	}
+}
+
+/deep/ .navbar-brand {
+	font-family: 'Nunito Sans';
+    font-size: 1.675rem;
+    text-decoration: none;
+    letter-spacing: 4px;
+    margin-left: 2.68rem;
+	font-weight: $font-weight-extra-light;
+	.btn-outline-danger {
+		padding: 1rem 1.5rem !important;
+	}
+}
+.navbar-dark {
+	.navbar-brand {
+		color: $black;
+	}
+}
+.nav-item {
+	margin-right: 0.67rem;
+	margin-left: 0.67rem;
+	@include media-breakpoint-down(sm) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.navbar.active {
+	background: #3a446a !important;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}

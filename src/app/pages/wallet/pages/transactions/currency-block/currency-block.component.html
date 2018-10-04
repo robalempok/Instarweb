@@ -1,0 +1,20 @@
+<div class="row mb-3">
+    <div class="col-7 balance">
+      <img width="40px" height="40px" [src]="image">
+      <div>
+        <h2>{{formattedBalance.split('.')[0]}}<span class="decimal">.{{formattedBalance.split('.')[1]}}</span></h2>
+        <h4>{{currency}} Balance</h4>
+      </div>
+    </div>
+    <div class="col-5 menu">
+        <i class="fa fa-ellipsis-v"></i>
+    </div>
+</div>
+<div class="row text-center btns">
+  <div>
+      <button (click)="receiveClicked()"  appButtonReceive>Receive</button>
+  </div>
+  <div>
+    <button (click)="transferClicked()"  appButtonTransfer>Transfer</button>
+  </div>
+</div>

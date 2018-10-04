@@ -1,0 +1,75 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+:host {
+    font-family: 'Nunito Sans';
+}
+
+.legend {
+    font-size: 1rem;
+    color: #48505c;
+    display: flex;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+        order: 1;
+    }
+    .block{
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 2px;
+        display: inline-block;
+        margin-right: 0.75rem;
+        &.received{
+            background-color: #60c5b1;
+        }
+        &.transfer{
+            margin-left: 2rem;
+            background-color: #5277c1;
+        }
+    }
+}
+
+.filter-options {
+    text-align: right;
+    font-size: 1rem;
+    line-height: 1.43;
+    color: #8c9fbf;
+    @include media-breakpoint-down(md) {
+        order: 3;
+    }
+    span {
+        margin-left: 2rem;
+        cursor: pointer;
+        &:hover,
+        &.selected{
+            color: #303864;
+            font-weight: bold;
+        }
+    }
+}
+
+.chart-row{
+    width: 100%;
+    @include media-breakpoint-down(md) {
+        order: 2;
+    }
+}
+
+.currency-blocks{
+    @include media-breakpoint-down(md) {
+        order: 1;
+    }
+}
+
+.transaction-history{
+    @include media-breakpoint-down(md) {
+        order: 3;
+    }
+}
+
+
+#chart {
+    overflow: hidden;
+    width: 100%;
+    order: 2;
+    height: 15rem;
+}

@@ -1,0 +1,56 @@
+:host{
+    font-family: 'Nunito Sans';
+    display: block;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+}
+
+.currency{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #303864;
+    img{
+        width:1.25rem;
+        height: auto;
+        margin: 0 0.5rem;
+    }
+}
+
+.percentage {
+    font-weight: 600;
+    &.negative {
+        color: #dd2b2b;
+    }
+    &.positive{
+        color: #63cab6;
+    }
+}
+
+.division {
+    align-items: center;
+    margin: 0;
+    color: #8c9fbf;
+    .division-line{
+        border: dashed 1px #e3e5ff;
+        height: 1px;
+    }
+}
+
+.amount {
+    color: #8c9fbf;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    span:first-of-type{
+        margin-right: 1rem;        
+    }
+}
+
+#chart {
+    overflow: hidden;
+    width: 100%;
+}

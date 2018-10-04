@@ -1,0 +1,179 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+footer{
+    font-family: 'Nunito Sans';
+    background: #303864;
+    padding-bottom: 2.5rem;
+    @include media-breakpoint-down(lg) {
+        padding-bottom: 8rem;
+    }
+    h4{
+        font-family: 'Nunito Sans';
+        font-size: 1.125rem;
+        margin-bottom: 1.56rem;
+        font-weight: 800;
+        font-style: normal;
+        @include media-breakpoint-down(lg) {
+            text-align: left;
+        }
+        &:before{
+            content : "";
+            position: absolute;
+            bottom  : 1rem;
+            height  : 1px;
+            width   : 2.25rem;
+            border-bottom:1px solid;
+            @include media-breakpoint-down(lg) {
+                bottom: 0;
+                top: 2rem;
+            }
+        }
+    }
+    hr{
+        background: rgba(255, 255, 255, 0.1);
+        margin-top: 3.125rem;
+        margin-bottom: 1.5rem;
+    }
+    .with-icon{
+        padding: 0.469rem 0;
+    }
+    .foot-items{
+        font-family: 'Nunito Sans';
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        font-size: 0.81rem;
+        line-height: normal;
+        letter-spacing: 0.5px;
+        color: #63cab6;
+        padding: 0.69rem 0;
+    }
+    .logo-main-row{
+        color: #ffffff;
+    }
+    .foot-row{
+        @include media-breakpoint-down(md) {
+            flex-direction: unset;
+            align-items: unset;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }            
+    }
+    .footer-text {
+        color: #fff;
+        font-family: 'Nunito Sans';
+        font-size: 0.812rem;
+        font-weight: normal;
+        opacity: .42;
+        margin-top: 1rem;
+        letter-spacing: .5px;
+        @include media-breakpoint-down(md) {
+            text-align: center;
+        }    
+    }
+    .foot-row-right{
+        margin-top: 0;
+        display: block;
+        @include media-breakpoint-down(lg) {
+            text-align: left;
+        }     
+        h4{
+            color: #ffffff;
+        }
+        p{
+            font-family: 'Nunito Sans';
+            font-size: 0.81rem;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.77;
+            letter-spacing: normal;
+            color: #9ba1c0;
+            margin-bottom: 1.5rem;
+        }
+        h2{
+            font-family: 'Nunito Sans';
+            font-size: 0.812rem;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.77;
+            letter-spacing: normal;
+            color: #ffffff;
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 1rem;
+            }
+        }
+        form{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            @include media-breakpoint-down(lg) {
+                flex-direction: column;
+                margin-bottom: 1rem;
+            }
+        }
+        input{
+            width: 60%;
+            padding: 1rem 1.25rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 0;
+            border-radius: 3px;
+            font-size: 0.812rem;
+            color: #ffffff;
+            @include media-breakpoint-down(lg) {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.15);
+            }
+            &::-webkit-input-placeholder {
+                color: #9ba1c0;
+            }
+            &::-moz-placeholder {
+                color: #9ba1c0;
+            }
+            &:-ms-input-placeholder {
+                color: #9ba1c0;
+            }
+            &:-moz-placeholder {
+                color: #9ba1c0;
+            }
+        }
+        button{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-decoration: none;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.125rem;
+            color: #fff;
+            border-color: #40497b;
+		    background: #40497b;
+            padding: 0.804rem 1.5rem;
+            align-self: flex-start;
+            letter-spacing: .5px;
+            border-radius: 3px;
+            
+            svg{
+                margin-left: 1rem;
+                width: 1.75rem;
+            }
+            &:hover {
+                background: #373e63;
+                border-color: #373e63;
+            }
+        }
+    }
+}

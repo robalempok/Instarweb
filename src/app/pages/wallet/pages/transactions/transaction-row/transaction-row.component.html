@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-8 col-md-3 transaction-logo">
+    <img [src]="transactionLogo">
+    <div>
+      <h4>
+        <ng-container *ngIf="transactionType == 0">Received-Reward</ng-container>
+        <ng-container *ngIf="transactionType == 1">Transfer INSTAR</ng-container>
+      </h4>
+      <p>
+        <ng-container *ngIf="transactionType == 0">From Insights Network</ng-container>
+        <ng-container *ngIf="transactionType == 1">To Instar Address</ng-container>
+      </p>
+    </div>
+  </div>
+  <div class="col-4 col-md-2">{{ amount }} Instar</div>
+  <div class="d-none d-md-block col-2">{{ fee }} Instar</div>
+  <div class="d-none d-md-block col-2">
+    <div class="circled" [ngClass]="transactionType == 0 ? 'receive' : 'transfer'">
+      <ng-container *ngIf="transactionType == 0">Received</ng-container>
+      <ng-container *ngIf="transactionType == 1">Sent</ng-container>
+    </div>
+  </div>
+  <div class="d-none d-md-block col-2">{{ dateString }}</div>
+  <div class="d-none d-md-block col-1">{{ time }}</div>
+</div>

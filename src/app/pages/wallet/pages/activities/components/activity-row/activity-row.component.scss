@@ -1,0 +1,11 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+a{
+    cursor: pointer;
+}
+
+h3{
+    @include media-breakpoint-down(md) {
+        font-size: 1.25rem;
+    }
+}

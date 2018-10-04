@@ -1,0 +1,37 @@
+.amount {
+  border: 0;
+  font-size: 4rem;
+  font-weight: 200;
+  color: #303864;
+  height: 100%;
+  text-align: center;
+
+  &:focus {
+    border-color: #ffffff;
+    outline: 0;
+    box-shadow: unset;
+  }
+}
+
+.balance {
+  font-size: 1rem;
+  text-align: right;
+  color: #8c9fbf;
+}
+
+label {
+  color: #63cab6;
+}
+
+i {
+    color: orange;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.transaction-information{
+  font-size: 1rem;
+  color: #8c9fbf;
+}

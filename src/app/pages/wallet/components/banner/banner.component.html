@@ -1,0 +1,45 @@
+<div class="referral-section">
+  <div class="container">
+    <div><img class="logo" src="assets/images/logo-token.svg"></div>
+    <h1 class="title">INSIGHTS REFERRAL PROGRAM</h1>
+    <hr>
+    <h2>Get paid in tokens for sharing!</h2>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12 col-md-3 step">
+        <div class="number">1</div>
+        <h1>GET YOUR LINK</h1>
+      </div>
+      <div class="d-none d-md-block col-1"><img src="/assets/images/arrow.svg"></div>
+      <div class="col-12 col-md-3 step">
+        <div class="number">2</div>
+        <h1>INVITE FRIENDS</h1>
+      </div>
+      <div class="d-none d-md-block col-1"><img src="/assets/images/arrow.svg"></div>
+      <div class="col-12 col-md-3 step">
+        <div class="number">3</div>
+        <h1>EARN TOKENS</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-3 step">
+        <div>
+          <p>Log in and get a custom referral link</p>
+        </div>
+      </div>
+      <div class="d-none d-md-block col-1"></div>
+      <div class="col-12 col-md-3 step">
+        <div>
+          <p>Invite friends with your custom referral link</p>
+          <button routerLink="referral" class="confirm-button" *ngIf="showReferralButton"><i class="fa fa-users"></i>Invite Friends</button>
+        </div>
+      </div>
+      <div class="d-none d-md-block col-1"></div>
+      <div class="col-12 col-md-3 step">
+        <div>
+          <p>Earn <span class="font-weight-bold">{{ referralReward }} INSTAR</span> as soon as they register
+            and complete three activities</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Survey</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="d-flex align-items-center">
+    <div class="activity-icon">
+      <div [ngClass]="'type-' + activity.type">{{ activityInitials }}</div>
+    </div>
+    <div class="d-inline-block">
+      <h4>{{activity.title}}</h4>
+      <div class="requester">
+          {{activity.requesterName}}
+      </div>
+    </div>
+  </div>
+  <div>
+    <p>
+      {{activity.description}}
+    </p>
+  </div>
+  <form [formGroup]="activityForm" novalidate (ngSubmit)="onSubmit()" #activityFormRef="ngForm">
+    <div [hidden]="!(page == i + 1)" *ngFor="let question of activity.questions; let i = index">
+      <div *ngIf="activity.questions.length > 1">
+        <p class="font-weight-bold">
+          {{question.questionText}}
+        </p>
+      </div>
+      <div *ngFor="let answer of question.offeredAnswers" class="form-element">
+        <div class="form-check">
+          <input [attr.id]="answer.id" [formControlName]="answer.questionId" type="radio" [value]="answer.id" [checked]="fulfilledFormValues?.answers.includes(answer.id)" [attr.disabled]="fulfilledFormValues != null ? '' : null">
+          <label [attr.for]="answer.id">{{answer.answerText}}</label>
+        </div>
+      </div>
+    </div>
+  </form>
+  <ngb-pagination *ngIf="activity.questions.length > 1" class="d-flex justify-content-center" [collectionSize]="activity.questions.length" [pageSize]="1" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+</div>
+<div class="modal-footer">
+  <div class="d-flex align-items-center">
+    <span class="mr-4 font-weight-bold">Reward</span>
+    <app-instar-reward [amount]="activity.reward"></app-instar-reward>
+  </div>
+  <div *ngIf="!fulfilledFormValues">
+    <button (click)="activityFormRef.ngSubmit.emit()" [disabled]="!activityFormRef.form.valid" appButtonConfirm>Submit</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <app-user-info 
+    [balance]="balance$ | async"
+    [firstName]="(names$ | async).firstName"
+    [lastName]="(names$ | async).lastName"
+    [level]="level$ | async"
+    [rating]="rating$ | async"
+    [profilePictureLink]="profilePictureLink$ | async"
+    [completedActivitiesCount]="(completedActivities$ | async).length"
+    [joined]="joined$ | async"></app-user-info>
+    <div class="d-flex">
+        <app-settings-side-bar *ngIf="(!hideSideBar && mobileQuery.matches) || !mobileQuery.matches"></app-settings-side-bar>
+        <div class="w-100">
+            <button class="back-button" *ngIf="hideSideBar && mobileQuery.matches" (click)="goBack()">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i><span>Go back</span></button>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+  </div>
+  

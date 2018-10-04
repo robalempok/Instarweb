@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-6">
+    <h1>History</h1>
+  </div>
+  <div class="col-6 text-right">
+    <!-- <button>Download History</button> -->
+  </div>
+</div>
+
+<div class="transactions">
+  <div class="row transactions-header">
+    <div class="col-8 col-md-3">Receive/Transfer</div>
+    <div class="col-4 col-md-2">Amount</div>
+    <div class="d-none d-md-block col-2">Fee</div>
+    <div class="d-none d-md-block col-2">Status</div>
+    <div class="d-none d-md-block col-2">Date</div>
+    <div class="d-none d-md-block col-1">Time</div>
+  </div>
+  <div class="transaction-entries">
+    <app-transaction-row *ngFor="let entry of entries"
+      [amount]="entry.amount"
+      [transactionType]="entry.transactionType"
+      [fee]="entry.fee"
+      [date]="entry.date"
+    ></app-transaction-row>
+  </div>
+</div>

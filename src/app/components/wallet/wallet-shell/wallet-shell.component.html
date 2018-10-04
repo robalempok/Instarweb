@@ -1,0 +1,60 @@
+<app-wallet-header [email]="email$ | async" [firstName]="(names$ | async).firstName" [lastName]="(names$ | async).lastName"
+  [profilePicture]="profilePicture$ | async" [referralReward]="referralReward$ | async" (signOut)="signOut()"
+  (toggleSidenav)="toggleSidenav()" [kycStatus]="kycStatus$ | async" ></app-wallet-header>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav class="sidenav" [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]='!mobileQuery.matches && !disableSidenav'
+    [disableClose]="!mobileQuery.matches">
+    <div *ngIf="mobileQuery.matches">
+      <div class="text-center">
+        <div class="user-info">
+          <img *ngIf="profilePicture$ | async" class="rounded-circle" width="50" height="50" [src]="profilePicture$ | async">
+          <div>
+            <h4>{{ (names$ | async).firstName }} {{ (names$ | async).lastName }}</h4>
+            <span>{{email$ | async}}</span>
+          </div>
+        </div>
+        <hr>
+        <div>
+          <a class="dropdown-item">Notification <span class="notification-number">2</span></a>
+          <a routerLink="settings" class="dropdown-item">Settings</a>
+          <a href="mailto:help@insights.network" class="dropdown-item">Contact Support</a>
+          <a routerLink="referral" class="dropdown-item referral-item">Invite friends
+            <div>Get <img src="assets/images/wallet/white-icon.svg"> {{referralReward$ | async}}</div></a>
+          <a (click)="signOut()" class="dropdown-item">Sign Out</a>
+        </div>
+      </div>
+    </div>
+    <ul *ngIf="!mobileQuery.matches" class="list-unstyled components">
+      <li>
+        <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <img src="assets/images/wallet/sidebar/dashboard.svg">Dashboard</a>
+        <a routerLink="activities" routerLinkActive="active">
+          <img src="assets/images/wallet/sidebar/activity.svg">Activities</a>
+        <a routerLink="wallet" routerLinkActive="active">
+          <img src="assets/images/wallet/sidebar/wallet.svg">Wallet</a>
+        <!-- <a routerLink="exchange" routerLinkActive="active">
+          <img src="assets/images/wallet/sidebar/exchange.svg">Exchange</a> -->
+        <a routerLink="referral" routerLinkActive="active">
+          <img src="assets/images/wallet/sidebar/referral.svg">Invite Friends</a>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>
+<app-bottom-nav class="d-lg-none">
+  <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <img src="assets/images/wallet/sidebar/dashboard.svg">Dashboard</a>
+  <a routerLink="activities" routerLinkActive="active">
+    <img src="assets/images/wallet/sidebar/activity.svg">Activity</a>
+  <a routerLink="wallet" routerLinkActive="active">
+    <img src="assets/images/wallet/sidebar/wallet.svg">Wallet</a>
+  <!-- <a routerLink="exchange" routerLinkActive="active">
+    <img src="assets/images/wallet/sidebar/exchange.svg">Exchange</a> -->
+  <a routerLink="referral" routerLinkActive="active">
+    <img src="assets/images/wallet/sidebar/referral.svg">Referral</a>
+</app-bottom-nav>

@@ -1,0 +1,82 @@
+<header>
+  <nav class="navbar navbar-dark navbar-expand-lg">
+    <div class="container-fluid">
+      <a routerLink="/app" class="navbar-brand">
+        <img src="assets/images/logo-token.svg" alt="Insights Logo">
+        <span>INSIGHTS NETWORK</span>
+      </a>
+      <button class="navbar-toggler" type="button" (click)="onToggleSidenav()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link" id="alertDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <img src="assets/images/bell.svg"/>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="alertDropdown">
+              <div>
+                <div class="dropdown-item welcome">
+                  <div>
+                    <img src="assets/images/logo-token.svg" alt="Insights Logo">
+                  </div>
+                  <div>
+                    <h1>Welcome to Instar Wallet</h1>
+                  </div>
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                      nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </div>
+                <div class="dropdown-item kyc-status" [ngClass]="kycClass">
+                  <i class="fa fa-shield" aria-hidden="true"></i>
+                  <p>{{ kycMessage }}</p>
+                </div>
+                <!-- <a href="#" class="dropdown-item">alert 2</a>
+                <a href="#" class="dropdown-item">alert 3</a>
+                <a href="#" class="dropdown-item">alert 4</a> -->
+              </div>
+            </div>
+          </li>
+          <li class=vertical-line>
+            <div></div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <img *ngIf="profilePicture" class="rounded-circle" width="50" height="50" [src]="profilePicture">
+              <div class="profileName">
+                <h4>{{ firstName }} {{ lastName }}</h4>
+                <span>{{ email }}</span>
+              </div>
+              <img class="option" src="assets/images/options.svg">
+            </a>
+            <div class="dropdown-menu profile-menu" aria-labelledby="profileDropdown">
+              <div>
+                <div class="text-center">
+                  <div>
+                    <img *ngIf="profilePicture" class="rounded-circle mb-2" width="50" height="50" [src]="profilePicture">
+                  </div>
+                  <div>{{ firstName }} {{ lastName }}</div>
+                  <div>{{email}}</div>
+                  <hr>
+                </div>
+                <div>
+                  <a routerLink="settings" class="dropdown-item">Settings</a>
+                  <a href="mailto:help@insights.network" class="dropdown-item">Contact Support</a>
+                  <a routerLink="referral" class="dropdown-item referral-item">Invite friends
+                    <div *ngIf="referralReward">Get <img src="assets/images/wallet/white-icon.svg"> {{referralReward}}</div></a>
+                  <a (click)="onSignOut()" class="dropdown-item">Sign Out</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

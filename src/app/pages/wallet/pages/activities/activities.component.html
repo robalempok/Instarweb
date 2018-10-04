@@ -1,0 +1,33 @@
+<div>
+  <ul class="tabs">
+      <li [class.active]="selectedTab == 0" (click)="selectTab(0)">Survey</li>
+      <li [class.active]="selectedTab == 1" (click)="selectTab(1)">KYC Marketplace</li>
+      <li [class.active]="selectedTab == 2" (click)="selectTab(2)">Recent Activity</li>
+  </ul>
+</div>
+<div class="activities">
+  <div style="height: 5rem;" class="d-none d-md-flex row">
+    <div class="col-auto activity-icon"></div>
+    <div class="col-5 requester-heading">Name</div>
+    <div class="col-4 col-md-3  mr-auto requester-heading">Requester</div>
+    <div class="col-2 requester-heading text-center">Reward</div>
+  </div>
+  <ng-container *ngIf="selectedTab == 0">
+    <app-activity-row *ngFor="let activity of surveys$ | async" class="striped" [id]="activity.activityId"
+      [type]="activity.type" [title]="activity.title" [description]="activity.description" [requester]="activity.requesterName"
+      [reward]="activity.reward" (openActivity)="openActivity($event)">
+    </app-activity-row>
+  </ng-container>
+  <ng-container *ngIf="selectedTab == 1">
+    <app-activity-row *ngFor="let activity of icos$ | async" class="striped" [id]="activity.activityId"
+      [type]="activity.type" [title]="activity.title" [description]="activity.description" [requester]="activity.requesterName"
+      [reward]="activity.reward" (openActivity)="openActivity($event)">
+    </app-activity-row>
+  </ng-container>
+  <ng-container *ngIf="selectedTab == 2">
+    <app-activity-row *ngFor="let activity of completedActivities$ | async" class="striped" [id]="activity.activityId"
+      [type]="activity.type" [title]="activity.title" [description]="activity.description" [requester]="activity.requesterName"
+      [reward]="activity.reward" (openActivity)="openActivity($event)">
+    </app-activity-row>
+  </ng-container>
+</div>

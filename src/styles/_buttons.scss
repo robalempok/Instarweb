@@ -1,0 +1,129 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+button {
+
+  &.share-button,
+  &.confirm-button,
+  &.cancel-button,
+  &.transfer-button,
+  &.receive-button,
+  &.back-button {
+    font-family: 'Nunito Sans';
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    user-select: none;
+    text-decoration: none;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    align-self: flex-start;
+    letter-spacing: .6px;
+    opacity: .9;
+  }
+
+  &.back-button {
+    background: #0cceff;
+    font-size: 1.25rem;
+    color: #fff;
+    padding: 0.75rem 1rem 0.75rem 1.25rem !important;
+    border-radius: 2rem;
+    width: 100%;
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: lighten(#63cab6, 20);
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 0.335rem 0.75rem !important;
+    }
+
+    >i {
+      margin-right: 1rem;
+
+      @include media-breakpoint-down(md) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &.share-button,
+  &.confirm-button {
+    font-size: 0.875rem;
+    color: #fff;
+    background: #63cab6;
+    padding: 0.75rem 1.25rem 0.75rem 0rem !important;
+    border-radius: 2rem;
+    width: 100%;
+    
+    &:disabled {
+      cursor: not-allowed;
+      background-color: lighten(#63cab6, 20);
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 70%;
+      padding: 1rem 0.75rem !important;
+      margin-left: 15%;
+    }
+
+    >i {
+      margin-right: 1.625rem;
+      font-size: 1.25rem;
+      @include media-breakpoint-down(md) {
+        margin-right: 1.625rem;
+      }
+    }
+  }
+
+  &.cancel-button {
+    font-size: 1.25rem;
+    color: #ed4a4a;
+    background: transparent;
+    padding: 0.75rem 3.4rem 0.75rem 1.34rem !important;
+    border-radius: 2rem;
+  
+    &:disabled {
+      cursor: not-allowed;
+    }
+  
+    @include media-breakpoint-down(md) {
+      padding: 0.335rem 0.5rem !important;
+    }
+  
+    >i {
+      margin-right: 1rem;
+    }
+  }
+
+  &.transfer-button,
+  &.receive-button {
+    font-size: 1rem;
+    color: #fff;
+    background-image: linear-gradient(285deg, #5172c1, #64d1b5);
+    box-shadow: 0 10px 20px 0 #d9e7ec;
+    padding: 0.75rem 1rem 0.75rem 1.25rem !important;
+    border-radius: 22.5px;
+    width: 100%;
+  
+    &:disabled {
+      cursor: not-allowed;
+      background-color: lighten(#63cab6, 20);
+    }
+  
+    @include media-breakpoint-down(md) {
+      padding: 0.5rem 0.5rem !important;
+      font-size: 0.8rem;
+    }
+  
+    >i {
+      margin-right: 10%;
+    }
+  }
+
+  &.transfer-button {
+    background-image: linear-gradient(285deg, #5172c1, #64d1b5);
+  }
+}

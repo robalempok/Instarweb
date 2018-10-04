@@ -1,0 +1,10 @@
+
+.modal-body {
+  text-align: center;
+}
+.modal-footer {
+  justify-content: space-around;
+  @supports (-ms-accelerator: true) { /* Edge only */
+    justify-content: space-around;
+  }
+}

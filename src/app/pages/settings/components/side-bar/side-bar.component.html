@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <nav>
+    <ul class="list-unstyled components">
+      <li>
+        <a routerLink="account" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Account</a>
+        <ul>
+          <li><a routerLink="account" fragment="update-name">Update Name</a></li>
+          <li><a routerLink="account" fragment="update-email">Update Email</a></li>
+          <li><a routerLink="/auth/change_password">Change Password</a></li>
+        </ul>
+        <a routerLink="verification" routerLinkActive="active">Verification</a>
+        <a href="mailto:help@insights.network" routerLinkActive="active">Support</a>
+      </li>
+    </ul>
+  </nav>
+</div>

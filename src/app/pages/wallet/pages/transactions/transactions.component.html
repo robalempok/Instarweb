@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+  <!-- CHART -->
+  <div class="row chart-row">
+    <div class="col-12 col-md-6 legend">
+      <div class="block received"></div>
+      <span>Received</span>
+      <div class="block transfer"></div>
+      <span>Transfer</span>
+    </div>
+    <div class="col-12 col-md-6 filter-options">
+      <span>1H</span>
+      <span>1D</span>
+      <span>1W</span>
+      <span>1M</span>
+      <span>1Y</span>
+      <span>ALL</span>
+    </div>
+    <div id="chart">
+      <ngx-charts-bar-vertical-2d [groupPadding]="2" [barPadding]="1" [scheme]="colorScheme" [results]="multi" [xAxis]="true" [yAxis]="true" [xAxisLabel]="'Country'"
+        [yAxisLabel]="'Population'" [yAxisTickFormatting]="yAxisTickFormatting">
+      </ngx-charts-bar-vertical-2d>
+    </div>
+  </div>
+  <!-- END CHART -->
+  <app-carousel class="d-md-none" [infinite]="false" [fade]="false" [arrowsVisible]="false" [height]="'17.5rem'"
+    [autoPlay]="false">
+    <app-carousel-item>
+      <div class="col-12 col-md-4 col-xl-12">
+        <app-currency-block [balance]="balance$ | async" [address]="eosAccountName$ | async" [commission]="2.5"
+          [currency]="'INSTAR'" [image]="'assets/images/logo-token.svg'" [transferAddress]="transferAddress"></app-currency-block>
+      </div>
+    </app-carousel-item>
+    <!-- <app-carousel-item>
+      <div class="col-12 col-md-4 col-xl-12">
+        <app-currency-block [balance]="399.20" [address]="'TO BE DETERMINED'" [commission]="3.5" [currency]="'Bitcoin'"
+          [image]="'assets/images/wallet/currency/bitcoin.svg'"></app-currency-block>
+      </div>
+    </app-carousel-item>
+    <app-carousel-item>
+      <div class="col-12 col-md-4 col-xl-12">
+        <app-currency-block [balance]="1099.93" [address]="'TO BE DETERMINED'" [commission]="4.5" [currency]="'Ethereum'"
+          [image]="'assets/images/wallet/currency/ethereum.svg'"></app-currency-block>
+      </div>
+    </app-carousel-item> -->
+  </app-carousel>
+  <div class="d-none d-md-flex col-12 col-sm-12 col-md-12 col-xl-3 row currency-blocks">
+    <div class="col-12 col-md-4 col-xl-12">
+      <app-currency-block [balance]="balance$ | async" [address]="eosAccountName$ | async" [commission]="2.5"
+        [currency]="'INSTAR'" [image]="'assets/images/logo-token.svg'"></app-currency-block>
+    </div>
+    <!-- <div class="col-12 col-md-4 col-xl-12">
+      <app-currency-block [balance]="399.20" [address]="'TO BE DETERMINED'" [commission]="3.5" [currency]="'Bitcoin'"
+        [image]="'assets/images/wallet/currency/bitcoin.svg'"></app-currency-block>
+    </div>
+    <div class="col-12 col-md-4 col-xl-12">
+      <app-currency-block [balance]="1099.93" [address]="'TO BE DETERMINED'" [commission]="4.5" [currency]="'Ethereum'"
+        [image]="'assets/images/wallet/currency/ethereum.svg'"></app-currency-block>
+    </div> -->
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-xl-9 transaction-history">
+    <app-transaction-history></app-transaction-history>
+  </div>
+</div>

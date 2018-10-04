@@ -1,0 +1,60 @@
+:host {
+    display: block;
+    opacity: 0.96;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 20px 40px 0 rgba(215, 219, 230, 0.5);
+    padding: 1.5rem 1rem;
+    border-left: 0.5rem solid transparent;
+    &:hover{
+        border-left: 0.5rem solid #61c1b7;
+    }
+}
+
+.balance{
+    display: flex;
+    align-items: center;
+    > div {
+        display: inline-block;
+        margin-left: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #303864;
+    }
+
+    h4 {
+        font-size: 1rem;
+        color: #9199a8;
+    }
+    .decimal{
+        font-size: 1rem;
+        color: #535e97;
+    }
+}
+
+.menu{
+    font-size: 1.25rem;
+    text-align: right;
+    i{
+        color: #303864;
+        cursor: pointer;
+    }
+}
+
+.btns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @supports (-ms-accelerator: true) { /* Edge only */
+        justify-content: space-around;
+    }
+    >div{
+        min-width: 5rem;
+        margin: 1rem 0;
+        width: 43%;
+        max-width: 15rem;
+    }
+}

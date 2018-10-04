@@ -1,0 +1,58 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+.top-commissions {
+  margin-bottom: 4rem;
+
+  >div {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.referral-table {
+  margin-bottom: 5rem;
+  color: #79797a;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #2f3763;
+  }
+  .head {
+    border-bottom: 2px solid #79797a;
+    img {
+      width: 1.5rem;
+    }
+    div {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+  .body {
+    border-bottom: 1px solid #79797a;
+    @include media-breakpoint-down(md) {
+      border-bottom: 0;
+    }
+    div {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      word-break: break-word;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    p {
+      color: #303864;
+      margin-bottom: 0;
+      font-weight: 600;
+
+      &.light-instar {
+        line-height: 1.67;
+        letter-spacing: 0.5px;
+        color: #8c9fbf;
+        font-weight: 400;
+      }
+    }
+  }
+
+}

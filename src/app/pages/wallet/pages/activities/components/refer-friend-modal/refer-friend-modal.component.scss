@@ -1,0 +1,20 @@
+.modal-content{
+    border-radius: 0;
+    padding: 2.5rem;
+}
+.modal-header{
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+}
+.modal-body{
+    text-align: center;
+}
+.modal-footer{
+    justify-content: center;
+    border: 0;
+}
+hr{
+    border-top: 1px solid #000;
+    width: 40%;
+}

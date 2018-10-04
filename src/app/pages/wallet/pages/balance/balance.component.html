@@ -1,0 +1,27 @@
+<h3>Your <span class=font-weight-bold>Instar</span> Balance: {{ balance$ | async }}</h3>
+<div>
+  <ul class="tabs">
+      <li [class.active]="selectedTimeRange == timeRange.Hour" (click)="getFeed(timeRange.Hour)">1 HOUR</li>
+      <li [class.active]="selectedTimeRange == timeRange.Day" (click)="getFeed(timeRange.Day)">1 DAY</li>
+      <li [class.active]="selectedTimeRange == timeRange.Week" (click)="getFeed(timeRange.Week)">1 WEEK</li>
+      <li [class.active]="selectedTimeRange == timeRange.Month" (click)="getFeed(timeRange.Month)">1 MONTH</li>
+      <li [class.active]="selectedTimeRange == timeRange.Year" (click)="getFeed(timeRange.Year)">1 YEAR</li>
+      <li [class.active]="!selectedTimeRange" (click)="getFeed()">ALL</li>
+  </ul>
+</div>
+<div id="chart">
+  <ngx-charts-line-chart
+  *ngIf="!chartDataLoading"
+  [scheme]="colorScheme"
+  [results]="balanceFeed"
+  [xAxis]="true"
+  [yAxis]="true"
+  [legend]="false"
+  [showXAxisLabel]="false"
+  [showYAxisLabel]="false"
+  [autoScale]="false"
+  [timeline]="true"
+  [yScaleMax]="yScaleMax"
+  [animations]="true"
+></ngx-charts-line-chart>
+</div>
